@@ -99,9 +99,9 @@
         return [self decode:data];
         
     }] doNext:^(UIImage *image) {
-        
-        [self.imageCache setObject:image forKey:url];
-        
+        if (image) {
+            [self.imageCache setObject:image forKey:url];
+        }
     }];
 }
 
